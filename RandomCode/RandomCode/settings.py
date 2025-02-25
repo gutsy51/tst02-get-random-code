@@ -59,7 +59,7 @@ DEBUG = 'RENDER' not in os.environ
 
 # Allowed hosts.
 ALLOWED_HOSTS = [
-    'tst02-get-random-code-udbs.onrender.com',  # Production host.
+    'tst02-get-random-code.onrender.com',  # Production host.
     '127.0.0.1',
     'localhost'
 ]

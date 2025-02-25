@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Code No Auth{% endblock %}
+
+{% block content %}
+  <h1 class="display-4">Code w/ auth. Sign out on F5.</h1>
+  <p class="lead">
+    Создать веб-сервис, который генерирует случайный
+    четырёхзначный код, но только после авторизации. После обновления страницы – выход.
+  </p>
+  {% if user.is_authenticated %}
+    {% include 'includes/digits.html' %}
+    <form class="form-control-lg" method="post" action="{% url 'logout' %}">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-outline-secondary">Log Out</button>
+    </form>
+
+    <script>
+      const logoutUrl = "{% url 'logout' %}";
+      const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+      window.onbeforeunload = function() {
+          fetch(logoutUrl, {
+              method: 'POST',
+              credentials: 'same-origin',
+              headers: {
+                  'X-CSRFToken': csrfToken,
+              },
+          });
+      };
+    </script>
+
+  {% else %}
+    <button type="button" class="btn btn-primary">
+{#      TODO button -> a #}
+      <a class="text-decoration-none text-reset" href="{% url 'login' %}">Log In</a>
+    </button>
+    <button type="button" class="btn btn-primary">
+      <a class="text-decoration-none text-reset" href="{% url 'registration' %}">Sign In</a>
+    </button>
+  {% endif %}
+{% endblock %}

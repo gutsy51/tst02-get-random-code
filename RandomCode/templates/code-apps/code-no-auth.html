@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Code No Auth{% endblock %}
+
+{% block content %}
+  <h1 class="display-4">Code w/out auth. Updated on F5.</h1>
+  <p class="lead">
+    Создать веб-сервис который генерирует случайный четырёхзначный кода.
+    Новый код по обновлению страницы. Требуется скинуть URL и показать код на питоне.
+  </p>
+  {% include 'includes/digits.html' %}
+{% endblock %}

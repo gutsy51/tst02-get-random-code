@@ -1,0 +1,17 @@
+{# Give a link to `codeAuth` and `codeNoAuth`. #}
+
+{% extends 'base.html' %}
+
+{% block title %}HelloAPI Index{% endblock %}
+
+{% block content %}
+  <h1 class="display-4">hello, world</h1>
+  <div class="btn-group-lg" role="group">
+    <button type="button" class="btn btn-primary">
+      <a class="text-decoration-none text-reset" href="{% url 'code1' %}">Задание 1</a>
+    </button>
+    <button type="button" class="btn btn-primary">
+      <a class="text-decoration-none text-reset" href="{% url 'code2' %}">Задание 2</a>
+    </button>
+  </div>
+{% endblock %}

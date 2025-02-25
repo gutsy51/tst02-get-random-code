@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.contrib.auth import logout
+from django.shortcuts import redirect
 from django.views.generic.base import View
 from random import randint
 
@@ -28,3 +30,8 @@ class RanNumAuthView(View):
     def get(self, request):
         context = {} if not request.user.is_authenticated else {"digits": get_code()}
         return render(request, self.template_name, context)
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('index')

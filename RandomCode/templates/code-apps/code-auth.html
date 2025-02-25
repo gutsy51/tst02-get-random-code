@@ -16,7 +16,7 @@
     </form>
 
     <script>
-      const logoutUrl = "{% url 'logout' %}";
+      const logoutUrl = "{% url 'logout-to-index' %}";
       const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
       window.onbeforeunload = function() {
           fetch(logoutUrl, {

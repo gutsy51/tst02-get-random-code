@@ -108,7 +108,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'RandomCode.wsgi.application'
 
-LOGIN_REDIRECT_URL = 'index'
+LOGIN_REDIRECT_URL = 'code2'
 
 
 # Database.

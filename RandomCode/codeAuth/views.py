@@ -34,4 +34,4 @@ class RanNumAuthView(View):
 
 def logout_view(request):
     logout(request)
-    return redirect('index')
+    return redirect('code2')

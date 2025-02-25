@@ -5,8 +5,8 @@ set -o errexit  # Exit on error
 pip install -r requirements.txt
 
 #echo "Collecting static files..."
-#python hello_api/manage.py collectstatic --noinput
-#ls -l hello_api/static/
+#python RandomCode/manage.py collectstatic --noinput
+#ls -l RandomCode/static/
 
 echo "Migrating database..."
-python hello_api/manage.py migrate
+python RandomCode/manage.py migrate
